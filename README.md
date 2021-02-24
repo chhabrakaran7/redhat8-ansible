@@ -2,6 +2,7 @@
 
 This repository is dedicated for installation of RedHat Ansible on RHEL 8 platform. This repository will also be home to various learnings and playbooks that we create as a part of the RHEL 8 Ansible journey.
 
+This is a work in progress and updates will be added to the repository frequently
 #### Setup Ansible
 `Virtualization platform: VMWare Workstation 16 PRO`
 
