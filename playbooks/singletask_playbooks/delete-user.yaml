@@ -1,0 +1,14 @@
+---
+## Delete User Playbook ##
+
+# Created by Karan Chhabra 27/2/21
+# This playbook will do the following on all of the ansible controlled hosts:
+# 1. Deletes a created user
+
+- name: Playbook to delete a user
+  hosts: all
+  tasks:
+    - name: Deleting a user thor
+      user:
+        name: thor
+        state: absent

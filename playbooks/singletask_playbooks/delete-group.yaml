@@ -1,0 +1,14 @@
+---
+## Delete Group Playbook ##
+
+# Created by Karan Chhabra 27/2/21
+# This playbook will do the following on all of the ansible controlled hosts:
+# 1. Delete a created group
+
+- name: Playbook to delete a group
+  hosts: all
+  tasks:
+    - name: Deleting a group avengers
+      group:
+        name: avengers
+        state: absent

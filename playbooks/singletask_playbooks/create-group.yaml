@@ -1,0 +1,14 @@
+---
+## Create Group Playbook ##
+
+# Created by Karan Chhabra 27/2/21
+# This playbook will do the following on all of the ansible controlled hosts:
+# 1. Create a new group
+
+- name: Playbook to create a group
+  hosts: all
+  tasks:
+    - name: Creating a group avengers
+      group:
+        name: avengers
+        state: present

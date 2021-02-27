@@ -1,0 +1,20 @@
+---
+## Create User Playbook ##
+
+# Created by Karan Chhabra 27/2/21
+# This playbook will do the following on all of the ansible controlled hosts:
+# 1. Create a new user
+# 2. Add home directory
+# 3. Add shell for the user
+# 4. Add the created user to a group
+
+- name: Playbook to create a user with attributes
+  hosts: all
+  tasks:
+    - name: Create a user named thor
+      user:
+        name: thor
+        password: $6$h7eYzdBiA3jUP4x2$ZWDI6qZFE7M3cC8P2hT0.Q1elMPA6poy4Dp13P.N7z0r3UB/dpjs6fBjnGo9AaLz7HpUhTZm0.hAeTjxhjuzv.
+        home: /home/thor
+        shell: /bin/bash
+        groups: avengers
