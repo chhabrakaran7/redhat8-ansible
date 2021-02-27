@@ -14,7 +14,7 @@
     - name: Create a user named thor
       user:
         name: thor
-        password: $6$h7eYzdBiA3jUP4x2$ZWDI6qZFE7M3cC8P2hT0.Q1elMPA6poy4Dp13P.N7z0r3UB/dpjs6fBjnGo9AaLz7HpUhTZm0.hAeTjxhjuzv.
+        password: <ADD GENERATED PASSWORD BY redhat-ansible/generate_password/generate_random_pass.sh SCRIPT FROM THIS REPOSITORY>
         home: /home/thor
         shell: /bin/bash
         groups: avengers
