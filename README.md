@@ -19,7 +19,6 @@ This is a work in progress and updates will be added to the repository frequentl
 
 #### Installation
 ##### Ansible Controller
-
 1. Install Ansible on the Ansible Controller node.
 2. Script location [Setup and Install Ansible]: redhat8-ansible/setup_ansible/setup_ansible.sh
 3. The above script pulls down the "epel-release-latest-8.noarch.rpm" from the fedora project, enables the "epel-playground" repo and installs ansible. 
@@ -32,6 +31,12 @@ This is a work in progress and updates will be added to the repository frequentl
     
     `ssh-copy-id root@host2.example.com`
 6. Copy /etc/hosts file to both host servers. This is done with an aim to setup communication between the controller and two hosts using their respective hostnames.
+
+#### Generate Random SHA512 Encrypted password using "DOVECOT"
+1. We can generate a random SHA512 Encrypted HASH VALUE for assigning passwords to created users either manually or via ansible.
+2. Script location: redhat-ansible/generate_password/generate_random_pass.sh
+  
+#### Ad-Hoc Commands Ansible
 
     
  
