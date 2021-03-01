@@ -1,0 +1,22 @@
+---
+## Install File Server Playbook ##
+
+# Created by Karan Chhabra 01/03/21
+# This playbook will do the following on all of the ansible controlled hosts:
+# 1. Install File Server
+# 2. Start vsftpd service
+# 3. Enable vsftpd servic
+
+- name: Playbook to install file server
+  hosts: all
+  tasks:
+    - name: Install file server #Install file server
+      yum:
+        name: vsftpd
+        state: latest
+
+    - name: Enable and re-start vsftpd service
+      systemd:
+        name: vsftpd
+        state: restarted    #Restart and enabled ftp service
+        enabled: true
