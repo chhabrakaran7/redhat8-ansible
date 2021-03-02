@@ -1,0 +1,15 @@
+---
+## This is a variable file which will be read by the main playbook ##
+
+# Created by Karan Chhabra 02/03/2021
+
+#Create directory variable#
+mydirectory: /opt/newdirectory
+
+#Copy file variable#
+sourcefile: /etc/passwd
+
+#Packages to install#
+install_pkg:
+  - httpd
+  - vsftpd

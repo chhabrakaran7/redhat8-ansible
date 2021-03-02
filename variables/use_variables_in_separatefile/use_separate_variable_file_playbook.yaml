@@ -1,0 +1,34 @@
+---
+## Copy file from one location to another using separate variable file ##
+
+# Created by Karan Chhabra 02/03/2021
+# This playbook will:
+# 1. Create a new directory on the managed hosts
+# 2. Copy the file from the defined source to the defined destination
+# 3. Install  multiple packages including the Apache web server and file server to managed hosts
+#
+# NOTE: This playbook reads the source and destination from the variables defined in the separate variable file (define_variable_here.yaml)
+
+- name: Using a separate variable file playbook
+  hosts: all
+  vars_files:
+            - define_variable_here.yaml
+  tasks:
+
+    - name: Create a new directory "{{ mydirectory }}"  #Create a fresh directory under /
+      file:                                                             #VARIABLE CALL from a separate variable file
+          path: "{{ mydirectory }}"
+          state: directory
+
+    - name: Copy "{{ sourcefile }}" to "{{ mydirectory }}"              #Copy the file from a source to destination
+      copy:                                                             #VARIABLE CALL from a separate variable file
+          src: "{{ sourcefile }}"
+          dest: "{{ mydirectory }}"
+          owner: thor
+          group: avengers
+          mode: 775
+
+    - name: Install packages defined in define_variable_here.yaml      #Install multiple packages on the managed hosts
+      yum:                                                              #VARIABLE CALL from a separate variable file
+         name: "{{ install_pkg }}"
+         state: latest

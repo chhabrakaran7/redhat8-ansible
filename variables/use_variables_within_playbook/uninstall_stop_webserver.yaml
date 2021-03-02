@@ -1,4 +1,4 @@
-## Install httpd server and enable httpd service using VARIABLES ##
+## Stop and Un-install Apache web server using VARIABLES ##
 
 # NOTE: We will talk about using the variable within the playbook in this example playbook
 
