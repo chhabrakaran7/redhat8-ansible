@@ -1,0 +1,25 @@
+## Install httpd server and enable httpd service using VARIABLES ##
+
+# NOTE: We will talk about using the variable within the playbook in this example playbook
+
+# Created by Karan Chhabra 02/03/2021 #
+# This playbook will:
+# 1. Install web server (httpd)
+# 2. Enable httpd service
+# 3. Start httpd service
+
+- name: Install and start Apache web server
+  hosts: all
+  vars:
+      - my_service: httpd                  #This section hosts variables
+  tasks:
+       - name: Install Apache web server   #Install web server task
+         yum:
+            name: "{{ my_service }}"       #VARIABLE CALL
+            state: present
+
+       - name: Start the httpd service     #Start httpd service task
+         systemd:
+                name: "{{ my_service }}"   #VARIABLE CALL
+                state: started
+                enabled: yes

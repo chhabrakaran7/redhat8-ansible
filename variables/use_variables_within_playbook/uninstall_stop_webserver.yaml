@@ -1,0 +1,23 @@
+## Install httpd server and enable httpd service using VARIABLES ##
+
+# NOTE: We will talk about using the variable within the playbook in this example playbook
+
+# Created by Karan Chhabra 02/03/2021 #
+# This playbook will:
+# 1. Stop httpd service (Apache web server)
+# 2. Uninstall Apache Web server
+
+- name: Stop and Uninstall Apache web server
+  hosts: all
+  vars:
+      - my_service: httpd                  #This section hosts variables
+  tasks:
+       - name: Stop httpd service          #Stop httpd service task
+         systemd:
+                name: "{{ my_service }}"   #VARIABLE CALL
+                state: stopped
+
+       - name: Remove Apache web server    #Remove web server task
+         yum:
+            name: "{{ my_service }}"       #VARIABLE CALL
+            state: absent

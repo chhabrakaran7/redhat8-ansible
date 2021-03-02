@@ -53,4 +53,24 @@ As a part of this repository I'll be writing multiple playbooks with description
 1. A playbook that is written with a motive to perform multiple tasks.    
 2. I've added multiple examples for playbooks which perform multiple tasks.
 3. Location: redhat8-ansible/playbooks/multitask_playbooks/
+4. Added a multitask playbook: Setup FTP server
+
+##### Variables
+As in any other programming/scripting language the use of a variable is a good practice. Some of the features of variables include: code re-use, perform multiple tasks, prevention of code duplication.
+Just like any other language we will use variables in ansible code as well.
+
+There are two major cases of variable use in ansible:
+
+1. Use variables within playbook:
+
+   `A case where the variables are defined and called within the playbook`
+   
+   `Examples: redhat-ansible/variables/use_variables_within_playbook/`
+   
+2. Use variables in a separate variables file:
+
+    `A case where the variables are defined in a separate variable file and are called on the fly in the main ansible playbook`
+    
+    `Examples: redhat-ansible/variables/use_variables_in_separatefile/`
+       
  
