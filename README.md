@@ -35,7 +35,7 @@ This is a work in progress and updates will be added to the repository frequentl
 #### **Ansible Management:**
 ##### Generate Random SHA512 Encrypted password using "DOVECOT"
 1. We can generate a random SHA512 Encrypted HASH VALUE for assigning passwords to created users either manually or via ansible.
-2. Script location: redhat-ansible/generate_password/generate_random_pass.sh
+`Script location: redhat-ansible/generate_password/generate_random_pass.sh`
   
 ##### Playbooks
 Playbooks are YAML scripts that are used to do configuration management on the servers listed as a part of the ansible inventory.
@@ -46,14 +46,16 @@ As a part of this repository I'll be writing multiple playbooks with description
 
 1. A playbook that is written with a motive to perform only one task.    
 2. I've added multiple examples for playbooks which perform single task.
-3. Location: redhat8-ansible/playbooks/singletask_playbooks/
-4. Some added single task playbooks are: create user, delete user, add group and delete group on all hosts under inventory.
+3. Some added single task playbooks are: create user, delete user, add group and delete group on all hosts under inventory.
+
+`Location: redhat8-ansible/playbooks/singletask_playbooks/`
 
 **Multiple task playbooks**
 1. A playbook that is written with a motive to perform multiple tasks.    
 2. I've added multiple examples for playbooks which perform multiple tasks.
-3. Location: redhat8-ansible/playbooks/multitask_playbooks/
-4. Added a multitask playbook: Setup FTP server
+3. Added a multitask playbook: Setup FTP server
+
+`Location: redhat8-ansible/playbooks/multitask_playbooks/`
 
 ##### Variables
 As in any other programming/scripting language the use of a variable is a good practice. Some of the features of variables include: code re-use, perform multiple tasks, prevention of code duplication.
@@ -63,13 +65,13 @@ There are two major cases of variable use in ansible:
 
 1. Use variables within playbook:
 
-   `A case where the variables are defined and called within the playbook`
+   A case where the variables are defined and called within the playbook
    
    `Examples: redhat-ansible/variables/use_variables_within_playbook/`
    
 2. Use variables in a separate variables file:
 
-    `A case where the variables are defined in a separate variable file and are called on the fly in the main ansible playbook`
+    A case where the variables are defined in a separate variable file and are called on the fly in the main ansible playbook
     
     `Examples: redhat-ansible/variables/use_variables_in_separatefile/`
        

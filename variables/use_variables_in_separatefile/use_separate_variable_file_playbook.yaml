@@ -1,5 +1,5 @@
 ---
-## Copy file from one location to another using separate variable file ##
+## Using separate variable file playbook##
 
 # Created by Karan Chhabra 02/03/2021
 # This playbook will:
