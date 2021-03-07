@@ -63,16 +63,23 @@ Just like any other language we will use variables in ansible code as well.
 
 There are two major cases of variable use in ansible:
 
-1. Use variables within playbook:
+1. Variables within playbook:
 
    A case where the variables are defined and called within the playbook
    
    `Examples: redhat-ansible/variables/use_variables_within_playbook/`
    
-2. Use variables in a separate variables file:
+2. Variables in a separate variables file:
 
     A case where the variables are defined in a separate variable file and are called on the fly in the main ansible playbook
     
     `Examples: redhat-ansible/variables/use_variables_in_separatefile/`
-       
+    
+3. User input variables:
+
+   A case where the variable is picked up from the user input while running playbook.
+   
+   `Examples: redhat-ansible/variables/user_input_variables/`
+
+   
  

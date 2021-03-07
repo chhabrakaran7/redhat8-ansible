@@ -1,0 +1,28 @@
+---
+## Remove any specified package using user supplied VARIABLES ##
+
+# Created by Karan Chhabra 07/03/2021 #
+# This playbook will:
+# 1. Uninstall packages
+# 2. Take the package name from user prompt
+# 3. Verify the package is uninstalled
+# 4. Print the STDOUT from the uninstall verification
+
+- name: Uninstall packages using USER INPUT
+  hosts: all
+  gather_facts: true
+  tasks:
+
+    - name: Uninstall packages
+      yum:
+        name: "{{ PACKAGE_NAME }}"
+        state: absent
+
+    - name: Verify uninstallation
+      shell: 'rpmquery "{{ PACKAGE_NAME }}"'
+      ignore_errors: True
+      register: package_status
+
+    - name: Print output
+      debug:
+        msg: "{{ package_status.stdout_lines }}"
