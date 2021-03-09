@@ -13,7 +13,7 @@
   gather_facts: true
   tasks:
 
-    - name: Uninstall packages
+    - name: Removing "{{ PACKAGE_NAME }}"
       yum:
         name: "{{ PACKAGE_NAME }}"
         state: absent
