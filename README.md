@@ -81,5 +81,19 @@ There are two major cases of variable use in ansible:
    
    `Examples: redhat-ansible/variables/user_input_variables/`
 
-   
+##### Sample Playbooks
+
+1. There are multiple playbooks written and added to this github repository as a part of learning.
+2. Sample playbooks are stored in the repository under a separate directory:
+
+`redhat8-ansible/playbooks_ALL_examples/`
+3. Following sample playbooks are added so far and more will be added as we move forward with our learnings.
+
+**Create any user [User prompt]:** `redhat8-ansible/playbooks_ALL_examples/create-user-prompt-input.yaml`
+ 
+**Delete any user [User prompt]:** `redhat8-ansible/playbooks_ALL_examples/create-user-prompt-input.yaml`
+
+**Install any package [User prompt]:** `redhat8-ansible/playbooks_ALL_examples/install-packages-prompt-input.yaml`
+
+**Remove any package [USer prompt]:** `redhat8-ansible/playbooks_ALL_examples/remove-packages-prompt-input.yaml`
  

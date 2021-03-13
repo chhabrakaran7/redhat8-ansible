@@ -1,0 +1,25 @@
+---
+## Install File Server Playbook ##
+
+# Created by Karan Chhabra 13/3/21
+# This playbook will do the following on all of the ansible controlled hosts:
+# 1. Install package
+# 2. Verify package installation
+# 3. Print verification status
+
+- name: Playbook to install "{{ PACKAGE_NAME }}" package
+  hosts: all
+  tasks:
+    - name: Installing "{{ PACKAGE_NAME }}"                  #Install user supplied package
+      yum:
+        name: "{{ PACKAGE_NAME }}"
+        state: latest
+
+    - name: Verify "{{ PACKAGE_NAME }}" installation status  #Verify package installation
+      shell: 'rpmquery "{{ PACKAGE_NAME }}"'
+      ignore_errors: True
+      register: package_status
+
+    - name: Print package status                             #Print package status
+      debug:
+        msg: '{{ package_status.stdout_lines }}'

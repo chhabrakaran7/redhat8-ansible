@@ -1,0 +1,26 @@
+---
+## Delete User Playbook ##
+
+# Created by Karan Chhabra 13/3/21
+# This playbook will do the following on all of the ansible controlled hosts:
+# 1. Delete user
+# 2. Take the user name from the user prompt
+# 3. Verify the user is deleted
+# 4. Print the STDOUT from the user verification
+
+- name: Playbook to delete a user
+  hosts: all
+  tasks:
+    - name: Deleting a user "{{ USER_NAME }}"       # Delete supplied user
+      user:
+        name: "{{ USER_NAME }}"
+        state: absent
+
+    - name: Verify user "{{ USER_NAME }}" deletion  # Verify user deletion
+      shell: 'id "{{ USER_NAME }}"'
+      ignore_errors: True
+      register: user_status
+
+    - name: Print user status                       # Print user deletion status
+      debug:
+        msg: "{{ user_status.stderr_lines }}"

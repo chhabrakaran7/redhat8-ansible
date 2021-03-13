@@ -6,23 +6,23 @@
 # 1. Uninstall packages
 # 2. Take the package name from user prompt
 # 3. Verify the package is uninstalled
-# 4. Print the STDOUT from the uninstall verification
+# 4. Print package verification status
 
-- name: Uninstall packages using USER INPUT
+- name: Playbook to remove packages
   hosts: all
   gather_facts: true
   tasks:
 
-    - name: Removing "{{ PACKAGE_NAME }}"   ## Removing supplied package
+    - name: Removing "{{ PACKAGE_NAME }}"   # Removing supplied package
       yum:
         name: "{{ PACKAGE_NAME }}"
         state: absent
 
-    - name: Verify uninstallation           ## Check status for package uninstallation
+    - name: Verify "{{ PACKAGE_NAME }}" uninstallation           # Check status for package uninstallation
       shell: 'rpmquery "{{ PACKAGE_NAME }}"'
       ignore_errors: True
       register: package_status
 
-    - name: Print package status             ## Print package status
+    - name: Print package status             # Print package status
       debug:
         msg: "{{ package_status.stdout_lines }}"
