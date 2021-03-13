@@ -84,9 +84,7 @@ There are two major cases of variable use in ansible:
 ##### Sample Playbooks
 
 1. There are multiple playbooks written and added to this github repository as a part of learning.
-2. Sample playbooks are stored in the repository under a separate directory:
-
-`redhat8-ansible/playbooks_ALL_examples/`
+2. Sample playbooks are stored in the repository under a separate directory: `redhat8-ansible/playbooks_ALL_examples/`
 3. Following sample playbooks are added so far and more will be added as we move forward with our learnings.
 
 **Create any user [User prompt]:** `redhat8-ansible/playbooks_ALL_examples/create-user-prompt-input.yaml`
