@@ -93,5 +93,5 @@ There are two major cases of variable use in ansible:
 
 **Install any package [User prompt]:** `redhat8-ansible/playbooks_ALL_examples/install-packages-prompt-input.yaml`
 
-**Remove any package [USer prompt]:** `redhat8-ansible/playbooks_ALL_examples/remove-packages-prompt-input.yaml`
+**Remove any package [User prompt]:** `redhat8-ansible/playbooks_ALL_examples/remove-packages-prompt-input.yaml`
  
